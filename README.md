@@ -1,2 +1,2 @@
 # code-snippets
-Code snippets that I may use again
+Code snippets that I may use again, as well as useful snippets that I am learning along the way. Everytime I learn a new piece of code I will try to commit it here as sort of a way to chart my progress. Hopefully some of this will be useful to another developer.
