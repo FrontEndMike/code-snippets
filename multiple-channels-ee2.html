@@ -1,0 +1,56 @@
+{embed="embeds/tmpl_head_info" channel_name="default" meta_tag="{page_description}"}
+<body class="Home">
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+{gv_header}
+
+<section id="top">
+	<div class="units-row">
+		<article class="unit-100">
+			<div class="slick">
+				<div class="text-center">
+					{exp:channel:entries channel="home" dynamic="yes" disable="members|categories|pagination"}
+						<h2>{title}</h2>
+						<h3>{street_address}</h3>
+						
+					{/exp:channel:entries}
+				</div>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+{!-- This channel tag pulls in the entries from the "loactions" channel, specifically entry_id 46. Dynamic yes/no has no effect because there is an entry id. However if there was no entry id, and Dynamic was "no", it would loop through and display the entry tags listed below from every "locations channel". If Dynamic was "yes" it would display nothing. --}
+
+{exp:channel:entries channel="locations" dynamic="no" entry_id="46" disable="members|categories|pagination"}
+	<article class="units-row padding-top padding-sides">
+		<div class="unit-50">
+			<h2>{title}</h2>	
+			<p>{street_address}</p>
+			<a href="{map_link}" target="_blank" class="btn-gold">Get Directions</a>
+		</div>
+
+		<div class="unit-50">
+			<figure>
+				{location_photos limit="1"}
+						<img src="{location_photos:photo_file}" alt="location_photos:title">
+					{/location_photos}
+					<figcaption>
+						<a href="#" id="gallery-trigger">View Gallery</a>
+					</figcaption>
+				</figure>
+				<div class="gallery-images">
+					{location_photos}
+						<a href="{location_photos:photo_file}" class="swipebox">
+							<img src="{location_photos:photo_file}" alt="{location_photos:title}">	
+						</a>
+					
+				{/location_photos}
+			</div>
+		</div>
+
+	</article>
+{/exp:channel:entries}
+
+{gv_footer}
