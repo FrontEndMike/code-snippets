@@ -1,0 +1,70 @@
+#pop-up-wrapper {
+  max-width: 370px;
+  width: 100%;
+  display: inline-block;
+  position: fixed;
+  right: 4rem;
+  bottom: 0;
+  z-index: 1009;
+  background-color: #f7f7f7;
+  transform: translateY(100%);
+  transition: all 0.5s ease;
+  box-shadow: 2px 4px 18px black;
+}
+@media only screen and (max-width:768px) {
+  #pop-up-wrapper {
+    right: 0rem;
+  }
+}
+#pop-up-wrapper .x-close {
+  background-color: #d48339;
+  height: 20px;
+  width: 20px;
+  right: 10px;
+  position: absolute;
+  padding: 0px 2px 7px 2px;
+  color: white;
+  text-align: center;
+  font-weight: 200;
+}
+#pop-up-wrapper .heading {
+  color: #d48339;
+  font-weight: bold;
+  text-align: center;
+  font-style: italic;
+  margin: 0rem auto .75rem;
+}
+#pop-up-wrapper .subheading {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0rem 2rem;
+  font-family: "museo-sans", sans-serif;
+  color: #737070;
+  font-weight: bold;
+}
+#pop-up-wrapper .paperless-conference {
+  border-bottom: 2rem solid #d48339;
+  padding-bottom: 2.5rem;
+  padding-top: 2rem;
+}
+#pop-up-wrapper a.btn {
+  display: block;
+  max-width: 181px;
+  margin: 0 auto;
+  padding: .2rem 0.65rem;
+  font-size: 1.25rem;
+}
+#pop-up-wrapper h1 {
+  padding: 0rem 0rem 1rem 0rem;
+  color: #073664;
+  display: block;
+  font-family: "museo-sans", sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  text-align: center;
+}
+#pop-up-wrapper.on {
+  transform: translateY(0%);
+}
